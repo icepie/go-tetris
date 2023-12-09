@@ -137,13 +137,26 @@ func drawStaticBoardParts() {
 	printBorderCharacter(totalWidth+2, headerHeight+height+2, '┤')
 
 	// Print the header logo
+
+	// 	______  _____  _____ \n
+	// |  ___||_   _||_   _| \n
+	// | |_     | |    | |  \n
+	// |  _|    | |    | |  \n
+	// | |     _| |_   | |  \n
+	// \_|     \___/   \_/  \n
+
+	// 表示 fit 的字体
 	header := []string{"",
-		"   ____         _____    _        _     ",
-		"  / ___| ___   |_   _|__| |_ _ __(_)___ ",
-		" | |  _ / _ \\    | |/ _ \\ __| '__| / __|",
-		" | |_| | (_) |   | |  __/ |_| |  | \\__ \\",
-		"  \\____|\\___/    |_|\\___|\\__|_|  |_|___/",
+		"   ______  _____  _____ ",
+		"  |  ___||_   _||_   _|",
+		"  | |_     | |    | |   安装过程较长",
+		"  |  _|    | |    | |   请您稍等片刻",
+		"  | |     _| |_   | |   不妨来一局!?",
+		"  \\_|     \\___/   \\_/",
+		"",
+		"",
 	}
+
 	for i, line := range header {
 		printString(2, i, line)
 	}
@@ -152,18 +165,18 @@ func drawStaticBoardParts() {
 	printStringVertical((width*2)+5, headerHeight+3, "NEXT")
 
 	// Print the "SCORE" header
-	printString((width*2)+10, headerHeight+previewHeight+4, "SCORE")
+	printString((width*2)+10, headerHeight+previewHeight+4, "分数")
 
 	// Print instructions below the game board.
-	instructions := []string{"Controls:",
+	instructions := []string{"控制:",
 		"",
-		"Move left       left arrow or 'h'",
-		"Move right      right arrow or 'l'",
-		"Move down       down arrow or 'j'",
-		"Rotate piece    up arrow or 'k'",
-		"Quick drop      space",
-		"Pause/Resume    'p'",
-		"Quit            ctrl-c or 'q'",
+		"向左移动       ← 或者 'h'",
+		"向右移动       → 或者 'l'",
+		"向下移动       ↓ 或者 'j'",
+		"旋转方向       ↑ 或者 'k'",
+		"加速下落       空格",
+		"暂停/继续      'p'",
+		// "退出游戏       'q'",
 	}
 	for i, message := range instructions {
 		printString(4, headerHeight+height+4+i, message)
